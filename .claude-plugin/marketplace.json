@@ -1,0 +1,5 @@
+{
+  "name": "prompt-master",
+  "owner": { "name": "advsuresh09-legal" },
+  "plugins": [{ "name": "prompt-master", "source": "./" }]
+}
