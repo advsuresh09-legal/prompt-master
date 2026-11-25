@@ -5,6 +5,7 @@ A Claude Code plugin that rewrites a rough prompt into a clear, complete one bef
 - It keeps your facts and your language (Tamil, English or a mix).
 - It never invents details. Where something important is missing, it adds a placeholder like `[client name]`.
 - For legal and business work, it asks for statute sections, rules and case citations, and asks Claude to flag anything it is not sure of.
+- It also gives a **Tamil version** of every improved prompt. If you write your rough prompt in Tamil, it gives an **English version** instead.
 
 ## What you need
 
@@ -53,11 +54,21 @@ On Enterprise accounts this option may be hidden. Use the recommended method ins
 
 ## Use
 
-- **Button:** type your rough prompt in the main box, then click **✨ Prompt Master** above it. Your draft is replaced with the improved prompt. Read it, edit if needed, then send. Click **Undo** to get your original back.
-- **Panel:** type or paste a rough prompt in the panel on the right, press **Rewrite**, then **Put in prompt box** or **Copy**. Press **Clear** to start again.
-- **Command:** type `/pm` followed by your rough prompt. `/pm` on its own opens the panel.
+- **Button:** type your rough prompt in the main box, then click **✨ Prompt Master** above it. Your draft is replaced with the improved prompt, and the Tamil version appears in the panel on the right. Read it, edit if needed, then send. Click **Undo** to get your original back.
+- **Panel:** type or paste a rough prompt in the panel on the right and press **Rewrite**. The panel shows the improved prompt and its Tamil version. Each has its own **Put in prompt box** and **Copy** buttons, so you can send either one. Press **Clear** to start again.
+- **Command:** type `/pm` followed by your rough prompt. The improved prompt goes into your prompt box and the Tamil version is shown in the chat. `/pm` on its own opens the panel.
+
+Only one version goes into the prompt box at a time, so you never send the same request twice.
 
 Each rewrite is one short call to Claude Sonnet, billed to your Claude account.
+
+## Update to the latest version
+
+When a new version is published here, update each computer once:
+
+1. Open a local session on **This computer**.
+2. Ask Claude: `Run "claude plugin marketplace update prompt-master" and then "claude plugin update prompt-master@prompt-master", and tell me the result.`
+3. Quit and reopen the Claude desktop app, then start a new session.
 
 ## If something goes wrong
 
@@ -68,6 +79,7 @@ Each rewrite is one short call to Claude Sonnet, billed to your Claude account.
 | "Failed to add marketplace" | Check the spelling `advsuresh09-legal/prompt-master` and your internet connection. |
 | "blocked by enterprise policy" | Ask your admin to allow this marketplace (see Enterprise accounts). |
 | Two Prompt Masters in the list | Remove one in **Settings → Customize → Plugins → Yours → ⋯ → Remove**. |
+| No Tamil version in the panel | Update to the latest version (see above), then start a new session. |
 | Missing in a cloud session or on your phone | Expected. Prompt Master runs only in local sessions. |
 
 ## Remove

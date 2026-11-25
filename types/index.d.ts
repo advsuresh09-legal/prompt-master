@@ -1,5 +1,9 @@
 export type PromptMasterStatus = 'idle' | 'working'
 
+// The same improved prompt in the second language: Tamil, or English when the
+// rough prompt was written in Tamil.
+export type SecondVersion = { label: 'Tamil' | 'English'; text: string }
+
 declare module 'claude-code' {
   interface PluginState {
     'prompt-master': {
@@ -10,6 +14,8 @@ declare module 'claude-code' {
       rough: Shaped<string>
       // The last improved prompt, shown in the panel.
       result: Shaped<string | null>
+      // The last improved prompt in the second language, shown in the panel.
+      second: Shaped<SecondVersion | null>
       // A short line the panel shows under the buttons.
       note: Shaped<string | null>
     }
